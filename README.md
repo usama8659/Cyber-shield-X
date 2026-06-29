@@ -112,6 +112,8 @@ Cyber Shield X operates through a modular dashboard where users select the scann
 - Zero‑width character detection
 - Enhanced metadata extraction
 - Advanced malicious image analysis
+- Gmail phishing scanner (email content, hidden URLs, QR codes)
+- Gmail header analysis (SPF/DKIM/DMARC)
 
 ## Author
 
