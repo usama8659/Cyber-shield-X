@@ -51,14 +51,25 @@ Cyber Shield X protects against:
 - Fake SSIDs (Evil Twin attacks)
 
 ## Screenshots
-Add your screenshots here:
-Code
-/screenshots/dashboard.png
-/screenshots/wifi_scanner.png
-/screenshots/url_scanner.png
-/screenshots/qr_scanner.png
-/screenshots/image_scanner.png
-/screenshots/app_scanner.png
+
+### Dashboard
+![Dashboard](Screenshots/dashboard.png)
+
+### App Scanner
+![App Scanner](Screenshots/app_scanner.png)
+
+### Image Scanner
+![Image Scanner](Screenshots/image_scanner.png)
+
+### QR Scanner
+![QR Scanner](Screenshots/qr_scanner.png)
+
+### URL Scanner
+![URL Scanner](Screenshots/url_scanner.png)
+
+### Wi‑Fi Scanner
+![WiFi Scanner 1](Screenshots/wifi_scanner1.png)
+![WiFi Scanner 2](Screenshots/wifi_scanner2.png)
 
 ## Installation
 
