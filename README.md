@@ -1,4 +1,6 @@
-# Cyber Shield X — Modular DFIR Security Toolkit  
+<img src="assets/Cyber%20shield%20X%20workflow.png" width="40" style="vertical-align: middle; margin-right: 8px;" />
+
+# Cyber Shield X — Modular DFIR Security Toolkit
 Cyber Shield X is a lightweight and modular DFIR security toolkit built to analyse common digital threats in a fast, safe and structured way. It provides dedicated scanners for Wi‑Fi networks, URLs, QR codes, images, metadata and installed applications. Each module delivers clear risk scoring, detailed findings and practical guidance, making the toolkit suitable for students, educators, early‑stage cybersecurity learners and professionals conducting quick assessments.
 
 ## Features
