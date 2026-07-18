@@ -79,9 +79,13 @@ The operational source code for Cyber Shield X is currently private for security
 
 ## How It Works
 
-Cyber Shield X operates through a modular dashboard where users select the scanner they want to run.  Each module performs its own analysis and displays results through a clean GUI interface.
+## 🔷 How It Works
 
-**This repository documents how each module works, including screenshots and explanations.**
+Cyber Shield X operates through a modular dashboard where users select the scanner they want to run. Each module performs its own analysis and displays results through a clean GUI interface.
+
+![Cyber Shield X Workflow](assets/Cyber%20shield%20X%20workflow.png)
+
+*Cyber Shield X processes user input through modular scanners, extracts relevant data, performs threat analysis, and generates a unified risk score.*
 
 
 ## Risk Scoring Summary
