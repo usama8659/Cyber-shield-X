@@ -79,7 +79,6 @@ The operational source code for Cyber Shield X is currently private for security
 
 ## How It Works
 
-## 🔷 How It Works
 
 Cyber Shield X operates through a modular dashboard where users select the scanner they want to run. Each module performs its own analysis and displays results through a clean GUI interface.
 
