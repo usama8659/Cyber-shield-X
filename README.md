@@ -84,7 +84,7 @@ Cyber Shield X operates through a modular dashboard where users select the scann
 
 ![Cyber Shield X Workflow](assets/Cyber%20shield%20X%20workflow.png)
 
-<p align="center"><i>Cyber Shield X processes user input through modular scanners, extracts relevant data, performs threat analysis, and generates a unified risk score.</i></p>
+<p align="center"><i>It processes user input through modular scanners, extracts relevant data, performs threat analysis and generates a unified risk score.</i></p>
 
 ## Risk Scoring Summary
 
