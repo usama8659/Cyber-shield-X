@@ -1,75 +1,90 @@
-# Cyber Shield X — Modular DFIR Security Toolkit
-Cyber Shield X is a lightweight and modular DFIR security toolkit built to analyse common digital threats in a fast, safe and structured way. It provides dedicated scanners for Wi‑Fi networks, URLs, QR codes, images, metadata and installed applications. Each module delivers clear risk scoring, detailed findings and practical guidance, making the toolkit suitable for students, educators, early‑stage cybersecurity learners and professionals conducting quick assessments.
+# Cyber Shield X - A lightweight and modular cybersecurity toolkit
+Cyber Shield X is a DFIR-inspired, multi-scanner and modular cybersecurity toolkit designed to analyse common digital threats in everyday life in a fast and structured way. The scanners include QR Scanner, Wi-Fi Scanner, Image Scanner, App Scanner, Metadata Extractor, Malicious Image Scanner and URL Scanner. Each module performs its own detailed scanning and provides clear risk scoring, making it efficient and user-friendly for early-stage cybersecurity learners, professionals, students, educators and everyday users.
 
 ## Features
 ### 1. Wi Fi Scanner
-The Wi‑Fi Scanner identifies several types of wireless security risks, including open networks, weak or legacy encryption (WEP/TKIP), duplicate SSIDs, rogue access points that mimic legitimate networks, unusual channel behaviour and unknown or suspicious authentication/cipher configurations.
+It detects open networks, rogue access points, duplicate SSIDs, BSSIDs, channel behaviour, suspicious authentication and cipher configuration. Based on these factors, it produces a safety score and categorises networks as Safe, Moderate, Dangerous or Rogue.
 
 ### 2. URL Scanner
-The URL Scanner analyses the full redirect chain, checks HTTPS configuration, evaluates domain reputation, applies threat‑intelligence heuristics, inspects URL parameters and identifies the final resolved destination.
+URL scanner performs:
+
+-Domain reputation analysis.
+
+-Checks for URL parameters to analyse redirect chain analysis, HTTPS configuration and hidden or suspicious parameters. It also checks for threat intelligence heuristics same as QR scanner.
+
+-Provides clear risk score and asks from user whether to open it or not.
 
 ### 3. Image Scanner
-The Image Scanner performs EXIF metadata extraction, OCR text analysis, hidden URL detection, hidden QR code identification, phishing‑text scoring and an overall image risk assessment.
+It performs OCR text analysis, hidden URL detection, hidden QR identification and conducts EXIF metadata extraction. After that, it provides phishing risk scoring and overall image risk score.
 
 ### 4. QR Scanner
-The QR Scanner processes all QR code formats and identifies URL, Wi‑Fi setup, and payment QR codes. It evaluates the content for potential risks, assigns a safety score, lists detected issues and provides a safe‑open option to prevent accidental exposure to malicious links.
+
+-It scans all QR codes and decides its type (URL, Wi-Fi, payment info etc.)
+
+-It also performs heuristic analysis to check suspicious URLs, identifies mismatch QR formats (e.g., QR says Wi-Fi but contains a link), checks unusual patterns like shortened links or redirects, detects encoded or hidden text, marks risky behaviour and provides risk scoring based on analysis and asks the user whether to open it or not.
 
 ### 5. App Scanner
-The App Scanner provides a detailed overview of installed applications by displaying their publisher, category, DFIR relevance and assigned safety score. It also classifies each application as SAFE, MODERATE or DANGEROUS based on its characteristics and potential security impact.
+It displays all the installed applications on the system, their publishers and category. It also checks their DFIR relevance and assigns them safety score. Based on scoring, it categorises them as Safe, Moderate or Dangerous. Moreover, if a user clicks on any installed app, it also shows details and reasons why an app is moderately safe or dangerous.
 
 ### 6. Metadata Extractor (In Development)
-The Metadata Extractor analyses EXIF and file‑level metadata to reveal editing traces, hidden or unusual fields, the software used to create or modify the file and any embedded thumbnail metadata. This helps identify tampering, manipulation or hidden information within digital files.
+It extracts EXIF and file-level metadata, checks for editing traces, embedded thumbnails, software usage and hidden fields for suspicious links.
 
 ### 7. Malicious Image Scanner (In Development)
-The Malicious Image Scanner examines images for signs of manipulation or embedded threats. It identifies suspicious patterns, hidden payloads and anomalies in the internal structure of the file that may indicate malicious behaviour or tampering.
-
-## System Architecture
-Cyber Shield X follows a modular architecture designed for clarity and extensibility. The input layer receives user‑provided data such as URLs, images, QR codes or Wi‑Fi networks. Each scanner module processes this input independently using its own analysis logic. The scoring engine then evaluates the results and assigns appropriate risk levels. The output layer presents these findings through a clean GUI or terminal interface, ensuring the toolkit remains easy to expand, maintain and integrate with future modules.
+It analyses hidden payloads, malicious behaviour, anomalies in structure and suspicious patterns in an image.
 
 ## Tech Stack
 
-- Python 3
-- Tkinter / CustomTkinter
-- Pillow
-- Pyzbar
-- Pytesseract
+- Python 3.10
 - ExifRead
+- RegeX
 - Requests
-- Regex
-- Windows netsh (Wi Fi scanning)
+- Pillow
+- Pytesseract
+- Tkinter/Custom Tkinter
+- Pyzbar
+- Windows netsh
 
 ## Threat Model
 Cyber Shield X protects against:
 
-- Phishing links
-- Rogue Wi‑Fi networks
 - Malicious QR codes
-- Metadata leaks
+- Phishing links
 - Suspicious applications
+- Rogue Wi-Fi networks
+- Fake SSIDs (Evil Twin Attacks)
+- Metadata leaks
 - Hidden text inside images
 - Weak encryption
-- Fake SSIDs (Evil Twin attacks)
 
 ## Screenshots
 
 ### Dashboard
 ![Dashboard](Screenshots/dashboard.png)
+<p align="center"><i>Main dashboard displaying all scanners.</i></p>
 
 ### App Scanner
 ![App Scanner](Screenshots/app_scanner.png)
+<p align="center"><i>App scanner Displaying all the installed apps, their category, DFIR relevance and risk scoring.</i></p>
 
 ### Image Scanner
 ![Image Scanner](Screenshots/image_scanner.png)
+<p align="center"><i>Image scanner showing EXIF metadata, OCR extraction, QR/URL detection and overall risk scoring.</i></p>
 
 ### QR Scanner
 ![QR Scanner](Screenshots/qr_scanner.png)
+<p align="center"><i>QR scanner showing QR type, showing SSID, encryption type, password strength issue and risk score.</i></p>
 
 ### URL Scanner
 ![URL Scanner](Screenshots/url_scanner.png)
+<p align="center"><i>URL scanner displaying redirect chain, domain analysis, threat-intel heuristics, HTTP checks, URL parameter inspection and overall risk scoring.</i></p>
 
 ### Wi‑Fi Scanner
 ![WiFi Scanner 1](Screenshots/wifi_scanner1.png)
+
+*Image showing windows blocking Wi-Fi scanning because location is off.*
+
 ![WiFi Scanner 2](Screenshots/wifi_scanner2.png)
+<p align="center"><i>Wi-Fi scanner displaying network SSID, BSSID, signal strength, channel type, authentication, cipher and status based on score.</i></p>
 
 ## Installation
 
@@ -89,35 +104,32 @@ Cyber Shield X operates through a modular dashboard where users select the scann
 ## Risk Scoring Summary
 
 ### URL / QR / Image Scanners (0–5)
-- **4–5 → SAFE**
-- **>3 → MODERATE**
-- **<3 → DANGEROUS**
+- **4–5** → Safe
+- **≥3** → Moderate
+- **<3** → Dangerous
 
 ### Wi‑Fi Scanner (0–100)
-- **80–100 → SAFE**
-- **50–79 → MODERATE**
-- **Below 50 → DANGEROUS**
-- **rogue_flag = True → ROGUE** (overrides all other scores)
+- **80–100** → Safe
+- **50–79** → Moderate
+- **Below 50** → Dangerous
+- **Rogue-flag** = True → Rogue
 
 ### App Scanner (0–100)
-- **80+ → SAFE**
-- **60–79 → MODERATE**
-- **Below 60 → DANGEROUS**
+- **80+** → Safe
+- **60–79** → Moderate
+- **Below 60** → Dangerous
 
 ## Roadmap
-- Mobile app (Android / iOS)
+- Mobile application (Android and iOS)
 - Browser extension
-- Virtual machine sandbox for safe analysis
-- AI‑based phishing detection
-- Cloud threat‑intelligence integration
-- Unicode and homoglyph detection
-- Zero‑width character detection
-- Enhanced metadata extraction
+- Gmail scanner: Gmail phishing scanner and header analyser
+- Virtual machine sandboxing
+- Enhanced and complete image metadata extractor
+- Unicode and zero-width character detection
 - Advanced malicious image analysis
-- Gmail phishing scanner (email content, hidden URLs, QR codes)
-- Gmail header analysis (SPF/DKIM/DMARC)
+- Cloud-based threat analysis
 
-## Author
+## Founders
 
 **Muhammad Usama Fakhar**  
 Cybersecurity & DFIR Enthusiast  
