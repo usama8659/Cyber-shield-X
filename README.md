@@ -6,22 +6,22 @@ Cyber Shield X is a DFIR-inspired, multi-scanner and modular cybersecurity toolk
 It detects open networks, rogue access points, duplicate SSIDs, BSSIDs, channel behaviour, suspicious authentication and cipher configuration. Based on these factors, it produces a safety score and categorises networks as Safe, Moderate, Dangerous or Rogue.
 
 ### 2. URL Scanner
-The URL scanner performs:
+The URL scanner performs the following:
 
 - Domain reputation analysis.
 
-- Checks URLs to analyse redirect chain analysis, HTTPS configuration and hidden or suspicious parameters. It also checks for threat intelligence heuristics same as QR scanner.
+- Checks URLs to analyse redirect chains, HTTPS configuration and hidden or suspicious parameters. It also applies threat intelligence heuristics same as QR scanner.
 
-- Provides clear risk score and asks from user whether to open it or not.
+- Provides a clear risk score and asks from user whether to open it or not.
 
 ### 3. Image Scanner
 It performs OCR text analysis, hidden URL detection, hidden QR identification and conducts EXIF metadata extraction. After that, it provides phishing risk scoring and overall image risk score.
 
 ### 4. QR Scanner
 
--It scans supported QR code formats and decides their type (URL, Wi-Fi, payment info etc.)
+- It scans supported QR code formats and decides their type (URL, Wi-Fi, payment info etc.)
 
--It applies heuristic checks to analyse suspicious URLs, identifies mismatch QR formats (e.g., QR says Wi-Fi but contains a link), checks unusual patterns like shortened links or redirects, detects encoded or hidden text, marks risky behaviour and provides risk scoring based on analysis and asks the user whether to open it or not.
+- It applies heuristic checks to analyse suspicious URLs, identifies mismatch QR formats (e.g., QR says Wi-Fi but contains a link), checks unusual patterns like shortened links or redirects, detects encoded or hidden text, marks risky behaviour and provides an overall risk score based on analysis and asks the user whether to open it.
 
 ### 5. App Scanner
 It displays all the installed applications on the system, their publishers and category. It also checks their DFIR relevance and assigns them a safety score. Based on scoring, it categorises them as Safe, Moderate or Dangerous. Moreover, if a user clicks on any installed app, it also shows details and reasons why an app is classified as moderately safe or dangerous.
@@ -81,18 +81,18 @@ Cyber Shield X is designed to help users identify and assess risks associated wi
 ### Wi‑Fi Scanner
 ![WiFi Scanner 1](Screenshots/wifi_scanner1.png)
 
-*Image showing windows blocking Wi-Fi scanning because location is off.*
+*Image showing Windows blocking Wi-Fi scanning because location is off.*
 
 ![WiFi Scanner 2](Screenshots/wifi_scanner2.png)
-<p align="center"><i>Wi-Fi scanner displaying network SSID, BSSID, signal strength, channel type, authentication, cipher and status based on score.</i></p>
+<p align="center"><i>Wi-Fi scanner displaying network SSID, BSSID, signal strength, channel, authentication, cipher and status based on score.</i></p>
 
 ### Metadata Extractor
 ![Metadata Extractor](Screenshots/metadata_extractor.png)
-<p align="center"><i>Metadata extractor showing EXIF details including camera brand, model, lens info, editing software, date and time stamp, presence of thumbnail and GPS coordinates.</i></p>
+<p align="center"><i>Metadata extractor showing EXIF details including camera brand, model, lens info, editing software, date and time, presence of thumbnail and GPS coordinates.</i></p>
 
 ### Malicious Image Scanner
 ![Malicious Image Scanner](Screenshots/Malicious_image.png)
-<p align="center"><i>Malicious image scanner portraying a medium suspicion level due to high entropy, valid magic bytes, file extension type, absence of trailing payload and normal stego heuristics.</i></p>
+<p align="center"><i>Malicious image scanner displaying a medium suspicion level due to high entropy, valid magic bytes, file extension type, absence of trailing payload and normal stego heuristics.</i></p>
 
 ## Code Snippets
 #### QR Scanner - Payment Detection Code
@@ -147,7 +147,7 @@ Cyber Shield X operates through a modular dashboard where users select the scann
 - **80–100** → Safe
 - **50–79** → Moderate
 - **Below 50** → Dangerous
-- **Rogue-flag** = True → Rogue
+- **Rogue flag** = True → Rogue
 
 ### App Scanner (0–100)
 - **80+** → Safe
@@ -173,7 +173,7 @@ Developer of the modular security toolkit
 
 Technical review by:
 **Faraz Ali**  
-Ex‑PFSA Digital Forensic Expert  
+Former Digital Forensic Expert, Punjab Forensic Science Agency  
 Forensic Consultant (Government of Sindh & Khyber Pakhtunkhwa)
 
 ## License
