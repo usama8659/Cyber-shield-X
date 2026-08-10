@@ -1,5 +1,5 @@
 # Cyber Shield X - A lightweight and modular cybersecurity toolkit
-Cyber Shield X is a DFIR-inspired, multi-scanner and modular cybersecurity toolkit designed to analyse common digital threats in everyday life in a fast and structured way. The scanners include QR Scanner, Wi-Fi Scanner, Image Scanner, App Scanner, Metadata Extractor, Malicious Image Scanner and URL Scanner. Each module performs its own detailed scanning and provides clear risk scoring, making it efficient and user-friendly for early-stage cybersecurity learners, professionals, students, educators and everyday users.
+Cyber Shield X is a DFIR-inspired, multi-scanner and modular cybersecurity toolkit designed to analyse common digital threats in everyday life in a fast and structured way. The scanners include QR Scanner, Wi-Fi Scanner, Image Scanner, App Scanner, Metadata Extractor, Malicious Image Scanner and URL Scanner. Each module is desgined to perform its own detailed scanning and provides clear risk scoring, making it efficient and user-friendly for early-stage cybersecurity learners, professionals, students, educators and everyday users.
 
 ## Features
 ### 1. Wi-Fi Scanner
