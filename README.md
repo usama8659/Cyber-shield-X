@@ -87,7 +87,7 @@ Cyber Shield X protects against:
 <p align="center"><i>Wi-Fi scanner displaying network SSID, BSSID, signal strength, channel type, authentication, cipher and status based on score.</i></p>
 
 ### Metadata Extractor
-![Metadata Extractor](screenshots/metadata_extractor.png)
+![Metadata Extractor](Screenshots/metadata_extractor.png)
 
 ## Installation
 
