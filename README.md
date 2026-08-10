@@ -83,6 +83,9 @@ Cyber Shield X protects against:
 
 *Image showing windows blocking Wi-Fi scanning because location is off.*
 
+### Metadata Extractor
+![Metadata_Extractor Screenshot](screenshots/metadata_extractor.png)
+
 ![WiFi Scanner 2](Screenshots/wifi_scanner2.png)
 <p align="center"><i>Wi-Fi scanner displaying network SSID, BSSID, signal strength, channel type, authentication, cipher and status based on score.</i></p>
 
