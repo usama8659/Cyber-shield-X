@@ -2,41 +2,41 @@
 Cyber Shield X is a DFIR-inspired, multi-scanner and modular cybersecurity toolkit designed to analyse common digital threats in everyday life in a fast and structured way. The scanners include QR Scanner, Wi-Fi Scanner, Image Scanner, App Scanner, Metadata Extractor, Malicious Image Scanner and URL Scanner. Each module performs its own detailed scanning and provides clear risk scoring, making it efficient and user-friendly for early-stage cybersecurity learners, professionals, students, educators and everyday users.
 
 ## Features
-### 1. Wi Fi Scanner
+### 1. Wi-Fi Scanner
 It detects open networks, rogue access points, duplicate SSIDs, BSSIDs, channel behaviour, suspicious authentication and cipher configuration. Based on these factors, it produces a safety score and categorises networks as Safe, Moderate, Dangerous or Rogue.
 
 ### 2. URL Scanner
-URL scanner performs:
+The URL scanner performs:
 
--Domain reputation analysis.
+- Domain reputation analysis.
 
--Checks for URL parameters to analyse redirect chain analysis, HTTPS configuration and hidden or suspicious parameters. It also checks for threat intelligence heuristics same as QR scanner.
+- Checks URLs to analyse redirect chain analysis, HTTPS configuration and hidden or suspicious parameters. It also checks for threat intelligence heuristics same as QR scanner.
 
--Provides clear risk score and asks from user whether to open it or not.
+- Provides clear risk score and asks from user whether to open it or not.
 
 ### 3. Image Scanner
 It performs OCR text analysis, hidden URL detection, hidden QR identification and conducts EXIF metadata extraction. After that, it provides phishing risk scoring and overall image risk score.
 
 ### 4. QR Scanner
 
--It scans all QR codes and decides its type (URL, Wi-Fi, payment info etc.)
+-It scans supported QR code formats and decides their type (URL, Wi-Fi, payment info etc.)
 
--It also performs heuristic analysis to check suspicious URLs, identifies mismatch QR formats (e.g., QR says Wi-Fi but contains a link), checks unusual patterns like shortened links or redirects, detects encoded or hidden text, marks risky behaviour and provides risk scoring based on analysis and asks the user whether to open it or not.
+-It applies heuristic checks to analyse suspicious URLs, identifies mismatch QR formats (e.g., QR says Wi-Fi but contains a link), checks unusual patterns like shortened links or redirects, detects encoded or hidden text, marks risky behaviour and provides risk scoring based on analysis and asks the user whether to open it or not.
 
 ### 5. App Scanner
-It displays all the installed applications on the system, their publishers and category. It also checks their DFIR relevance and assigns them safety score. Based on scoring, it categorises them as Safe, Moderate or Dangerous. Moreover, if a user clicks on any installed app, it also shows details and reasons why an app is moderately safe or dangerous.
+It displays all the installed applications on the system, their publishers and category. It also checks their DFIR relevance and assigns them a safety score. Based on scoring, it categorises them as Safe, Moderate or Dangerous. Moreover, if a user clicks on any installed app, it also shows details and reasons why an app is classified as moderately safe or dangerous.
 
 ### 6. Metadata Extractor (In Development)
-It extracts EXIF and file-level metadata, checks for editing traces, embedded thumbnails, software usage and hidden fields for suspicious links.
+It currently extracts EXIF and file-level metadata, checks for editing traces, embedded thumbnails, software usage and hidden fields for suspicious links.
 
 ### 7. Malicious Image Scanner (In Development)
-It analyses hidden payloads, malicious behaviour, anomalies in structure and suspicious patterns in an image.
+It currently analyses hidden payloads, malicious behaviour, anomalies in structure and suspicious patterns in an image.
 
 ## Tech Stack
 
 - Python 3.10
 - ExifRead
-- RegeX
+- Regex
 - Requests
 - Pillow
 - Pytesseract
@@ -45,7 +45,7 @@ It analyses hidden payloads, malicious behaviour, anomalies in structure and sus
 - Windows netsh
 
 ## Threat Model
-Cyber Shield X protects against:
+Cyber Shield X is designed to help users identify and assess risks associated with:
 
 - Malicious QR codes
 - Phishing links
@@ -140,7 +140,7 @@ Cyber Shield X operates through a modular dashboard where users select the scann
 
 ### URL / QR / Image Scanners (0–5)
 - **4–5** → Safe
-- **≥3** → Moderate
+- **3 to <4** → Moderate
 - **<3** → Dangerous
 
 ### Wi‑Fi Scanner (0–100)
@@ -164,20 +164,20 @@ Cyber Shield X operates through a modular dashboard where users select the scann
 - Advanced malicious image analysis
 - Cloud-based threat analysis
 
-## Founders
+## Creator and Technical Review
 
 **Muhammad Usama Fakhar**  
 Cybersecurity & DFIR Enthusiast  
 Creator of **Cyber Shield X**  
 Developer of the modular security toolkit
 
-Technical review and contribution by:  
+Technical review by:
 **Faraz Ali**  
 Ex‑PFSA Digital Forensic Expert  
 Forensic Consultant (Government of Sindh & Khyber Pakhtunkhwa)
 
 ## License
-Cyber Shield X is not licensed yet.  A license will be added when the project is ready for public release.
+Cyber Shield X is not licensed yet. A license will be added when the project is ready for public release.
 
 ## Disclaimer
-Cyber Shield X is intended for educational and defensive cybersecurity use only.
+Cyber Shield X is intended for educational and defensive cybersecurity use only. It is not a replacemnet for enterprise-level security solutions.
