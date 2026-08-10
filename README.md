@@ -94,8 +94,8 @@ Cyber Shield X protects against:
 ![Malicious Image Scanner](Screenshots/Malicious_image.png)
 <p align="center"><i>Malicious image scanner portraying a medium suspicion level due to high entropy, valid magic bytes, file extension type, absence of trailing payload and normal stego heuristics.</i></p>
 
-### 📁 Code Examples
-[payment detection Code](code/payment_detection.py)
+### Code Examples
+- [Payment Detection Code](code/payment_detection.py)
 
 **A public demo or partial code release may be provided in the future.**
 
