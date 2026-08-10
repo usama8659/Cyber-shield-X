@@ -1,3 +1,4 @@
+```python
 PAYMENT_HINTS = [
     "upi:", "upi://", "paytm", "gpay", "phonepe",
     "paypal", "stripe", "payu", "razorpay",
@@ -7,3 +8,4 @@ PAYMENT_HINTS = [
 def is_payment_payload(text):
     lower = text.lower()
     return any(h in lower for h in PAYMENT_HINTS)
+```
