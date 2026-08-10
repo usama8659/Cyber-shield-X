@@ -94,10 +94,38 @@ Cyber Shield X protects against:
 ![Malicious Image Scanner](Screenshots/Malicious_image.png)
 <p align="center"><i>Malicious image scanner portraying a medium suspicion level due to high entropy, valid magic bytes, file extension type, absence of trailing payload and normal stego heuristics.</i></p>
 
-### Code Examples
-- [Payment Detection Code](code/payment_detection.py)
+## Code Snippets
+#### QR Scanner - Payment Detection Code
 
-**A public demo or partial code release may be provided in the future.**
+```python
+PAYMENT_HINTS = [
+    "upi:", "upi://", "paytm", "gpay", "phonepe",
+    "paypal", "stripe", "payu", "razorpay",
+    "bitcoin:", "ethereum:", "btc:", "eth:", "iban:", "payto:"
+]
+
+def is_payment_payload(text):
+    lower = text.lower()
+    return any(h in lower for h in PAYMENT_HINTS)
+```
+#### App Scanner - Category Detection Code
+
+```python
+def detect_category(app_name, publisher):
+    name = app_name.lower()
+    pub = (publisher or "").lower()
+
+    # Basic DFIR tool detection
+    if is_dfir_tool(app_name, publisher):
+        return "Forensic Tool"
+
+    # Keyword-based classification
+    for category, keywords in CATEGORY_KEYWORDS.items():
+        if any(kw in name or kw in pub for kw in keywords):
+            return category
+
+    return "Unknown / Other"
+```
 
 ## How It Works
 
