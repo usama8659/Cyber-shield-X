@@ -180,4 +180,4 @@ Forensic Consultant (Government of Sindh & Khyber Pakhtunkhwa)
 Cyber Shield X is not licensed yet. A license will be added when the project is ready for public release.
 
 ## Disclaimer
-Cyber Shield X is intended for educational and defensive cybersecurity use only. It is not a replacemnet for enterprise-level security solutions.
+Cyber Shield X is intended for educational and defensive cybersecurity use only. It is not a replacement for enterprise-level security solutions.
