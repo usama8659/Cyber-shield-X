@@ -88,6 +88,7 @@ Cyber Shield X protects against:
 
 ### Metadata Extractor
 ![Metadata Extractor](Screenshots/metadata_extractor.png)
+<p align="center"><i>Metadata extractor showing EXIF details including camera brand, model, lens info, editing software, date and time stamp, presence of thumbnail and GPS coordinates.</i></p>
 
 ## Installation
 
