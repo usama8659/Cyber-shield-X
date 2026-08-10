@@ -90,6 +90,10 @@ Cyber Shield X protects against:
 ![Metadata Extractor](Screenshots/metadata_extractor.png)
 <p align="center"><i>Metadata extractor showing EXIF details including camera brand, model, lens info, editing software, date and time stamp, presence of thumbnail and GPS coordinates.</i></p>
 
+### Malicious Image Scanner
+![Malicious Image Scanner](Screenshots/Malicious_image.png)
+<p align="center"><i>Malicious image scanner potraying medium suspicious level due to high entropy, false magic mismatch, extension type, trailing payload and stego heuristics.</i></p>
+
 ## Installation
 
 The operational source code for Cyber Shield X is currently private for security and research reasons.  This repository provides documentation, architecture details, module descriptions and screenshots.
