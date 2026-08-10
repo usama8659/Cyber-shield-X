@@ -95,6 +95,9 @@ Cyber Shield X is designed to help users identify and assess risks associated wi
 <p align="center"><i>Malicious image scanner displaying a medium suspicion level due to high entropy, valid magic bytes, file extension type, absence of trailing payload and normal stego heuristics.</i></p>
 
 ## Code Snippets
+
+Below snippets are only small fractions of the full implementation and the complete source code will be published after the official launch.
+
 #### QR Scanner - Payment Detection Code
 
 ```python
@@ -108,23 +111,17 @@ def is_payment_payload(text):
     lower = text.lower()
     return any(h in lower for h in PAYMENT_HINTS)
 ```
-#### App Scanner - Category Detection Code
+#### App Scanner - Code for Publisher Reputation
 
 ```python
-def detect_category(app_name, publisher):
-    name = app_name.lower()
-    pub = (publisher or "").lower()
-
-    # Basic DFIR tool detection
-    if is_dfir_tool(app_name, publisher):
-        return "Forensic Tool"
-
-    # Keyword-based classification
-    for category, keywords in CATEGORY_KEYWORDS.items():
-        if any(kw in name or kw in pub for kw in keywords):
-            return category
-
-    return "Unknown / Other"
+def publisher_reputation(publisher):
+    if not publisher:
+        return "Unknown"
+    pub_l = publisher.lower()
+    for known_pub, rep in TRUSTED_PUBLISHERS.items():
+        if known_pub in pub_l:
+            return rep
+    return "Unknown"
 ```
 
 ## How It Works
@@ -171,8 +168,7 @@ Cybersecurity & DFIR Enthusiast
 Creator of **Cyber Shield X**  
 Developer of the modular security toolkit
 
-Technical review by:
-**Faraz Ali**  
+**Technical review by Faraz Ali**  
 Former Digital Forensic Expert, Punjab Forensic Science Agency  
 Forensic Consultant (Government of Sindh & Khyber Pakhtunkhwa)
 
