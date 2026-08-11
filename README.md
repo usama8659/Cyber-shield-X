@@ -156,7 +156,7 @@ Cyber Shield X operates through a modular dashboard where users select the scann
 - Browser extension
 - Gmail scanner: Gmail phishing scanner and header analyser
 - Virtual machine sandboxing
-- Enhanced and complete image metadata extractor
+- Enhanced image metadata extractor
 - Unicode and zero-width character detection
 - Advanced malicious image analysis
 - Cloud-based threat analysis
