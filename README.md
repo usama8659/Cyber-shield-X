@@ -10,7 +10,7 @@ The URL scanner performs the following:
 
 - Domain reputation analysis.
 
-- Checks URLs to analyse redirect chains, HTTPS configuration and hidden or suspicious parameters. It also applies threat intelligence heuristics same as QR scanner.
+- Checks URLs to analyse redirect chains, HTTPS configuration and hidden or suspicious parameters. It also applies DFIR-style heuristics analysis similar to the QR scanner.
 
 - Provides a clear risk score and asks from user whether to open it or not.
 
@@ -21,7 +21,7 @@ It performs OCR text analysis, hidden URL detection, hidden QR identification an
 
 - It scans supported QR code formats and decides their type (URL, Wi-Fi, payment info etc.)
 
-- It applies heuristic checks to analyse suspicious URLs, identifies mismatch QR formats (e.g., QR says Wi-Fi but contains a link), checks unusual patterns like shortened links or redirects, detects encoded or hidden text, marks risky behaviour and provides an overall risk score based on analysis and asks the user whether to open it.
+- It applies local heuristics checks to analyse suspicious URLs, identifies mismatch QR formats (e.g., QR says Wi-Fi but contains a link), detects unusual patterns like shortened links or multiple redirects, finds encoded or hidden text, flags risky behaviour and provides an overall risk score before asking the user whether to open it.
 
 ### 5. App Scanner
 It displays all the installed applications on the system, their publishers and category. It also checks their DFIR relevance and assigns them a safety score. Based on scoring, it categorises them as Safe, Moderate or Dangerous. Moreover, if a user clicks on any installed app, it also shows details and reasons why an app is classified as moderately safe or dangerous.
@@ -76,7 +76,7 @@ Cyber Shield X is designed to help users identify and assess risks associated wi
 
 ### URL Scanner
 ![URL Scanner](Screenshots/url_scanner.png)
-<p align="center"><i>URL scanner displaying redirect chain, domain analysis, threat-intel heuristics, HTTP checks, URL parameter inspection and overall risk scoring.</i></p>
+<p align="center"><i>URL scanner displaying redirect chain, domain analysis, local heuristics analysis, HTTPS checks, URL parameter inspection and overall risk scoring.</i></p>
 
 ### Wi‑Fi Scanner
 ![WiFi Scanner 1](Screenshots/wifi_scanner1.png)
