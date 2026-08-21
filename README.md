@@ -123,7 +123,61 @@ def publisher_reputation(publisher):
             return rep
     return "Unknown"
 ```
+#### Image scanner - URL Extraction in image
 
+```python
+def extract_urls_from_text(text: str):
+    urls = URL_REGEX.findall(text)
+    cleaned = []
+    for u in urls:
+        if u.lower().startswith("www."):
+            u = "http://" + u
+        cleaned.append(u.strip(".,);\"'"))
+    return list(set(cleaned))
+```
+#### URL Scanner - HTTPS Scoring
+
+```python
+def https_analysis(url: str):
+    parsed = urlparse(url)
+    score = 5
+    reasons = []
+
+    if parsed.scheme != "https":
+        score -= 2
+        reasons.append("Not using HTTPS (connection not encrypted).")
+
+    return score, reasons
+```
+#### Wi-Fi Scnner - Rogue Detection Logic
+
+```python
+def detect_rogue_flags(networks):
+    ssid_map = {}
+
+    for net in networks:
+        ssid = net["ssid"]
+        if ssid not in ssid_map:
+            ssid_map[ssid] = []
+        for ap in net["bssids"]:
+            ssid_map[ssid].append(ap)
+
+    rogue_bssids = set()
+
+    for ssid, aps in ssid_map.items():
+        if len(aps) <= 1:
+            continue
+
+        auth_set = set((ap["auth"] or "").strip() for ap in aps)
+        cipher_set = set((ap["cipher"] or "").strip() for ap in aps)
+        channel_set = set(ap["channel"] for ap in aps if ap["channel"] is not None)
+
+        if len(auth_set) > 1 or len(cipher_set) > 1 or len(channel_set) > 1:
+            for ap in aps:
+                rogue_bssids.add(ap["bssid"])
+
+    return rogue_bssids
+```
 ## How It Works
 
 
